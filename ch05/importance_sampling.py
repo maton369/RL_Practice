@@ -28,7 +28,7 @@ pi = np.array([0.1, 0.1, 0.8])
 #
 # ここで x と pi は同じインデックス対応なので、要素積 x*pi を総和すればよい。
 e = np.sum(x * pi)
-print('E_pi[x]', e)
+print("E_pi[x]", e)
 
 # ============================================================
 # 2) Monte Carlo（ターゲット分布 π から直接サンプルして推定）
@@ -50,7 +50,7 @@ for _ in range(n):
     samples.append(s)
 
 # 推定値：平均、ばらつき：分散
-print('MC: {:.2f} (var: {:.2f})'.format(np.mean(samples), np.var(samples)))
+print("MC: {:.2f} (var: {:.2f})".format(np.mean(samples), np.var(samples)))
 
 # ============================================================
 # 3) Importance Sampling（別分布 b で集めたデータで E_pi[X] を推定）
@@ -110,4 +110,4 @@ for _ in range(n):
     #   こちらは一般に分散は下がりやすいが、わずかにバイアスが入る。
     samples.append(rho * s)
 
-print('IS: {:.2f} (var: {:.2f})'.format(np.mean(samples), np.var(samples)))
+print("IS: {:.2f} (var: {:.2f})".format(np.mean(samples), np.var(samples)))
